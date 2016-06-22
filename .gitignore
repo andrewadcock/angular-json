@@ -1,0 +1,7 @@
+# OSX
+.DS_Store
+Icon
+
+# NPM
+node_modules
+npm-debug.log
