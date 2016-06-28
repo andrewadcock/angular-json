@@ -1,0 +1,8 @@
+<ul>
+    <li ng-repeat="post in posts">
+        <h3><a href="{{post.id}}">{{post.title.rendered}}</a></h3>
+        <div class="post-excerpt">
+            {{post.excerpt.rendered}}
+        </div>
+    </li>
+</ul>
