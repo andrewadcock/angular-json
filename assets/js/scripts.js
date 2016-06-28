@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute', 'ngSanitize'])
     .config(function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
 
@@ -21,27 +21,15 @@ angular.module('app', ['ngRoute'])
         }).then(function (response) {
             // Set response to data, eg the list of posts
             $scope.posts = response.data;
-            console.log(response);
+            // console.log(response);
         }, function (response) {
             //console.log('Error in http.get response' .  response)
         });
     })
 
     .controller('PostContent', function ($scope, $http, $routeParams) {
-        console.log($routeParams.ID);
-        // $http({
-        //     type: 'GET',
-        //     url: 'wp-json/wp/v2/posts/',
-        // }).then(function (response) {
-        //     // Set response to data, eg the list of posts
-        //     $scope.posts = response.data;
-        //     console.log('Success - single post');
-        //     console.log($routeParams.ID);
-        //     console.log(response.data);
-        // }, function (response) {
-        //     console.log('Error in http.get response' + $routeParams);
-        // });
         $http.get('wp-json/wp/v2/posts/' + $routeParams.ID).success(function(res){
             $scope.post = res;
+            //console.log(res);
         });
     });
