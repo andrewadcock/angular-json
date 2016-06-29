@@ -13,7 +13,7 @@
 </header>
 
 <pre><code>$var = test;</code></pre>
-<div hljs ng-view></div>
+<div hljs ng-view class="container"></div>
 
 <footer>
 

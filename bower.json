@@ -18,6 +18,8 @@
     "angular": "^1.5.7",
     "angular-route": "^1.5.7",
     "angular-sanitize": "^1.5.7",
-    "angular-highlightjs": "^0.6.1"
+    "angular-highlightjs": "^0.6.1",
+    "bourbon": "^4.2.7",
+    "neat": "^1.8.0"
   }
 }

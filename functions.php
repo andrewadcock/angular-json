@@ -51,6 +51,11 @@ function angjs_scripts()
         '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css'
     );
 
+    wp_enqueue_style(
+        'theme-styles',
+        get_stylesheet_directory_uri() . '/assets/css/style.css'
+    );
+
 
 }
 
@@ -58,6 +63,7 @@ add_action('wp_enqueue_scripts', 'angjs_scripts');
 
 
 // HLJS / Pre / Code shortcode
+// CURRENTLY NOT WORKING
 function hljs_pre_code_shortcode($atts, $content = "") {
     extract( shortcode_atts( array(
         'tag' =>"",
@@ -69,24 +75,3 @@ function hljs_pre_code_shortcode($atts, $content = "") {
 
 add_shortcode('hljs', 'hljs_pre_code_shortcode');
 
-
-add_filter( 'wp_kses_allowed_html', 'esw_author_cap_filter',1,1 );
-
-function esw_author_cap_filter( $allowedposttags ) {
-
-//Here put your conditions, depending your context
-
-    if ( !current_user_can( 'publish_posts' ) )
-        return $allowedposttags;
-
-// Here add tags and attributes you want to allow
-
-    $allowedposttags['div']=array(
-
-        'align' => true,
-        'hljs' => true
-
-    );
-    return $allowedposttags;
-
-}
