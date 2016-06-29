@@ -15,4 +15,5 @@ Separation of concerns is important. We will use Bower for all front-end depende
 
 ## To-Do
 
-Fix highlightjs issue - currently there is a conflict with ngSanitize and/or ng-bind-html
+1. Fix highlightjs issue - currently there is a conflict with ngSanitize and/or ng-bind-html
+2. Comfirm usage of bower for bourbon and bourbon neat
