@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute', 'ngSanitize'])
+angular.module('app', ['ngRoute', 'hljs', 'ngSanitize'])
     .config(function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
 
@@ -28,8 +28,10 @@ angular.module('app', ['ngRoute', 'ngSanitize'])
     })
 
     .controller('PostContent', function ($scope, $http, $routeParams) {
-        $http.get('wp-json/wp/v2/posts/' + $routeParams.ID).success(function(res){
+        $http.get('wp-json/wp/v2/posts/' + $routeParams.ID).success(function (res) {
+            
             $scope.post = res;
             //console.log(res);
         });
-    });
+    })
+

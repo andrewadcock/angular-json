@@ -12,3 +12,7 @@ Bower >= 1.7.9 | No
 
 **** Why Bower when already using Node?
 Separation of concerns is important. We will use Bower for all front-end dependencies and node for back-end. [Here is a good] (http://juristr.com/blog/2014/08/node-grunt-yeoman-bower/) article explaining the differences.
+
+## To-Do
+
+Fix highlightjs issue - currently there is a conflict with ngSanitize and/or ng-bind-html
