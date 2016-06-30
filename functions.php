@@ -31,15 +31,21 @@ function angjs_scripts()
     );
 
     wp_enqueue_script(
-        'theme-scripts',
-        get_stylesheet_directory_uri() . '/assets/js/scripts.js',
+        'core-scripts',
+        get_stylesheet_directory_uri() . '/dist/scripts/core.js',
         array( 'angularjs', 'angularjs-route', 'angularjs-sanitize' )
+    );
+
+    wp_enqueue_script(
+        'theme-scripts',
+        get_stylesheet_directory_uri() . '/dist/scripts/main.js',
+        array( 'jQuery' )
     );
 
 
 
     wp_localize_script(
-        'theme-scripts',
+        'core-scripts',
         'themeLocalized',
         array(
             'partials' => trailingslashit( get_template_directory_uri() ) . 'partials/'
@@ -53,7 +59,7 @@ function angjs_scripts()
 
     wp_enqueue_style(
         'theme-styles',
-        get_stylesheet_directory_uri() . '/assets/css/style.css'
+        get_stylesheet_directory_uri() . '/dist/styles/main.css'
     );
 
 

@@ -8,3 +8,6 @@ npm-debug.log
 
 # Bower
 bower_components
+
+# Compiled Scripts / Styles
+dist
